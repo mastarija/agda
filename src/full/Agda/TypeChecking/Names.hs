@@ -132,6 +132,9 @@ ilam :: MonadFail m
     => ArgName -> (NamesT m Term -> NamesT m Term) -> NamesT m Term
 ilam n f = glam (setRelevance Irrelevant defaultArgInfo) n f
 
+llam :: MonadFail m
+    => LockKind -> ArgName -> (NamesT m Term -> NamesT m Term) -> NamesT m Term
+llam k n f = glam (setLock (IsLock k) defaultArgInfo) n f
 
 
 data AbsN a = AbsN { absNName :: [ArgName], unAbsN :: a } deriving (Functor,Foldable,Traversable)
