@@ -971,6 +971,7 @@ primitiveFunctions = localTCStateSavingWarnings <$> Map.fromList
   , builtinForcingTickIrr |-> primForcingTickIrr'
   , builtinForcingApp     |-> primForcingApp'
   , builtinForcingAppDep  |-> primForcingAppDep'
+  , builtinPFix           |-> primPFix'
   ]
   where
     (|->) = (,)
